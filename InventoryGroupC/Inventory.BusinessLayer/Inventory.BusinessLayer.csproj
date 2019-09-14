@@ -41,10 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DistributorAddressBL.cs" />
     <Compile Include="InventoryBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Inventory.DataAccessLayer\Inventory.DataAccessLayer.csproj">
+      <Project>{f2447422-9ed6-4a04-b289-89d5f355da12}</Project>
+      <Name>Inventory.DataAccessLayer</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Inventory.Entities\Inventory.Entities.csproj">
       <Project>{3e9448bc-658c-4acf-a1b9-dfbeeb308389}</Project>
       <Name>Inventory.Entities</Name>

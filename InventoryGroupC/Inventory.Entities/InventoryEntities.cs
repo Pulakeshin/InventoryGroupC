@@ -82,8 +82,8 @@ namespace Inventory.Entities
             set { distributorstate = value; }
         }
 
-        private int distributorpincode;
-        public int DistributorPincode
+        private string distributorpincode;
+        public string DistributorPincode
         {
             get { return distributorpincode; }
             set { distributorpincode = value; }
@@ -96,7 +96,7 @@ namespace Inventory.Entities
             distributoraddressLine2 = string.Empty;
             distributorcity = string.Empty;
             distributorstate = string.Empty;
-            distributorpincode = 000000;
+            distributorpincode = string.Empty;
         }
     }
 

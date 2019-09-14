@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Inventory.DataAccessLayer;
 using Inventory.Entities;
 using Inventory.Exceptions;
 
 namespace Inventory.BusinessLayer
 {
-    public class InventoryBL
+    public class DistributorBL
     {
         private static bool ValidateDistributor(Distributor distributor)
         {
@@ -43,8 +44,8 @@ namespace Inventory.BusinessLayer
             {
                 if (ValidateDistributor(newdistributor))
                 {
-                    DistributorDAL distributorDAL = new distributorDAL();
-                    distributorAdded = distributorDAL.AddDistributorDAL(newDistributor);
+                    DistributorDAL distributorDAL = new DistributorDAL();
+                    distributorAdded = distributorDAL.AddDistributorDAL(newdistributor);
                 }
             }
             catch (InventoryException)
@@ -61,14 +62,13 @@ namespace Inventory.BusinessLayer
 
         public static List<Distributor> GetAllDistributorsBL()
         {
-            List<Distributor> guestList = null;
+            List<Distributor> distributorList = null;
             try
             {
                 DistributorDAL distributorDAL = new DistributorDAL();
-                guestList = distributorDAL.GetAllDistributorsDAL();
+                distributorList = distributorDAL.GetAllDistributorsDAL();
             }
-            catch (InventoryException
- ex)
+            catch (InventoryException ex)
             {
                 throw ex;
             }
@@ -76,7 +76,7 @@ namespace Inventory.BusinessLayer
             {
                 throw ex;
             }
-            return guestList;
+            return distributorList;
         }
 
         public static Distributor SearchDistributorBL(int searchDistributorID)
@@ -150,4 +150,5 @@ namespace Inventory.BusinessLayer
         }
 
     }
+    
 }
