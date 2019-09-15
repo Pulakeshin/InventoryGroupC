@@ -1,0 +1,9 @@
+C:\Users\Dell\source\repos\Lab1\InventoryGroupC\InventoryGroupC\Inventory.Entities\bin\Debug\Inventory.Entities.dll
+C:\Users\Dell\source\repos\Lab1\InventoryGroupC\InventoryGroupC\Inventory.Entities\bin\Debug\Inventory.Entities.pdb
+C:\Users\Dell\source\repos\Lab1\InventoryGroupC\InventoryGroupC\Inventory.Entities\bin\Debug\Inventory.PresentationLayer.dll
+C:\Users\Dell\source\repos\Lab1\InventoryGroupC\InventoryGroupC\Inventory.Entities\bin\Debug\Inventory.PresentationLayer.pdb
+C:\Users\Dell\source\repos\Lab1\InventoryGroupC\InventoryGroupC\Inventory.Entities\obj\Debug\Inventory.Entities.csprojAssemblyReference.cache
+C:\Users\Dell\source\repos\Lab1\InventoryGroupC\InventoryGroupC\Inventory.Entities\obj\Debug\Inventory.Entities.csproj.CoreCompileInputs.cache
+C:\Users\Dell\source\repos\Lab1\InventoryGroupC\InventoryGroupC\Inventory.Entities\obj\Debug\Inventory.Entities.csproj.CopyComplete
+C:\Users\Dell\source\repos\Lab1\InventoryGroupC\InventoryGroupC\Inventory.Entities\obj\Debug\Inventory.Entities.dll
+C:\Users\Dell\source\repos\Lab1\InventoryGroupC\InventoryGroupC\Inventory.Entities\obj\Debug\Inventory.Entities.pdb
