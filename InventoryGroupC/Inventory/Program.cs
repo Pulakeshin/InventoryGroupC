@@ -78,8 +78,6 @@ namespace Inventory
                     Console.WriteLine("Invalid Input");
                     break;
             }
-
-            
         }
 
         private static void DeleteDistributor()
