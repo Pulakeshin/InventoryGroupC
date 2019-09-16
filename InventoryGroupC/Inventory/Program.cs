@@ -8,13 +8,14 @@ using Inventory.DataAccessLayer;
 using Inventory.Entities;
 using Inventory.Exceptions;
 
-namespace Inventory
+namespace Inventory.PresentationLayer
 {
     class Program
     {
-        static void Main()
+        static void Main(string[] args)
         {
-            int temp,flag;
+         
+            int temp, flag;
             Console.WriteLine("ENTER CHOICE:");
             Console.WriteLine("1.System User");
             Console.WriteLine("2.Supplier");
@@ -34,13 +35,13 @@ namespace Inventory
                     }
                     else if (flag == 2)
                     {
-                        int choice;
+                        int choice2;
                         do
                         {
                             PrintMenu();
                             Console.WriteLine("Enter your Choice:");
-                            choice = Convert.ToInt32(Console.ReadLine());
-                            switch (choice)
+                            choice2 = Convert.ToInt32(Console.ReadLine());
+                            switch (choice2)
                             {
                                 case 1:
                                     AddDistributor();
@@ -63,23 +64,48 @@ namespace Inventory
                                     Console.WriteLine("Invalid Choice");
                                     break;
                             }
-                        } while (choice != -1);
+                        } while (choice2 != -1);
                     }
                     else
                         Console.WriteLine("Invalid choice");
                     break;
                 case 2:
-                    Console.WriteLine("In Supplier");
+                    Console.WriteLine("In supplier");
                     break;
                 case 3:
-                    Console.WriteLine("In Distributor");
+                    int choice;
+                    do
+                    {
+                        PrintAddressMenu();
+                        Console.WriteLine("Enter your Choice:");
+                        choice = Convert.ToInt32(Console.ReadLine());
+                        switch (choice)
+                        {
+                            case 1:
+                                AddDistributorAddress();
+                                break;
+                            case 2:
+                                ListAllDistributorsAddress();
+                                break;
+                            case 3:
+                                SearchDistributorAddressByID();
+                                break;
+                            case 4:
+                                UpdateDistributorAddress();
+                                break;
+                            case 5:
+                                DeleteDistributorAddress();
+                                break;
+                            default:
+                                Console.WriteLine("Invalid Choice");
+                                break;
+                        }
+                    } while (choice != -1);
                     break;
                 default:
                     Console.WriteLine("Invalid Input");
                     break;
             }
-
-            Console.ReadKey();
         }
 
         private static void DeleteDistributor()
@@ -171,7 +197,7 @@ namespace Inventory
                 Console.WriteLine(ex.Message);
             }
         }
-        
+
         private static void ListAllDistributors()
         {
             try
@@ -200,29 +226,10 @@ namespace Inventory
             }
         }
 
-        private static void AddDistributorAddress()
-        {
-            DistributorAddress distributorAddress = new DistributorAddress();
-            Console.WriteLine("Enter Distributor Address ID :");
-            distributorAddress.DistributorAddressID = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Enter Distributor Address Line1 :");
-            distributorAddress.DistributorAddressLine1 = Console.ReadLine();
-            Console.WriteLine("Enter Distributor Address Line2 :");
-            distributorAddress.DistributorAddressLine2 = Console.ReadLine();
-            Console.WriteLine("Enter Distributor City :");
-            distributorAddress.DistributorCity = Console.ReadLine();
-            Console.WriteLine("Enter Distributor State :");
-            distributorAddress.DistributorState = Console.ReadLine();
-            Console.WriteLine("Enter Pincode :");
-            distributorAddress.DistributorPincode = Console.ReadLine();
-
-        }
-
         private static void AddDistributor()
         {
             try
             {
-                DistributorAddress distributorAddress = new DistributorAddress();
                 Distributor distributor = new Distributor();
                 Console.WriteLine("Enter Distributor ID :");
                 distributor.DistributorID = Convert.ToInt32(Console.ReadLine());
@@ -232,11 +239,6 @@ namespace Inventory
                 distributor.DistributorContactNumber = Console.ReadLine();
                 Console.WriteLine("Enter Email ID :");
                 distributor.DistributorEmail = Console.ReadLine();
-                Console.WriteLine("Enter Distributor Address: ");
-                if (distributor.DistributorID==distributorAddress.DistributorAddressID)
-                {
-                    
-                }
 
                 bool distributorAdded = DistributorBL.AddDistributorBL(distributor);
                 if (distributorAdded)
@@ -262,5 +264,172 @@ namespace Inventory
             Console.WriteLine("******************************************\n");
 
         }
+
+        private static void AddDistributorAddress()
+        {
+            try
+            {
+                DistributorAddress distributorAddress = new DistributorAddress();
+                Console.WriteLine("Enter Distributor Address ID :");
+                distributorAddress.DistributorAddressID = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Enter Distributor Address Line1 :");
+                distributorAddress.DistributorAddressLine1 = Console.ReadLine();
+                Console.WriteLine("Enter Distributor Address Line2 :");
+                distributorAddress.DistributorAddressLine2 = Console.ReadLine();
+                Console.WriteLine("Enter Distributor City :");
+                distributorAddress.DistributorCity = Console.ReadLine();
+                Console.WriteLine("Enter Distributor State :");
+                distributorAddress.DistributorState = Console.ReadLine();
+                Console.WriteLine("Enter Pincode :");
+                distributorAddress.DistributorPincode = Console.ReadLine();
+                bool distributorAddressAdded = DistributorAddressBL.AddDistributorAddressBL(distributorAddress);
+                if (distributorAddressAdded)
+                    Console.WriteLine("Distributor Address Added");
+                else
+                    Console.WriteLine("Distributor Address not Added");
+            }
+            catch (InventoryException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        private static void DeleteDistributorAddress()
+        {
+            try
+            {
+                int deleteDistributorAddressID;
+                Console.WriteLine("Enter DistributorAddressID to Delete:");
+                deleteDistributorAddressID = Convert.ToInt32(Console.ReadLine());
+                DistributorAddress deleteDistributorAddress = DistributorAddressBL.SearchDistributorAddressBL(deleteDistributorAddressID);
+                if (deleteDistributorAddress != null)
+                {
+                    bool distributorAddressdeleted = DistributorAddressBL.DeleteDistributorAddressBL(deleteDistributorAddressID);
+                    if (distributorAddressdeleted)
+                        Console.WriteLine("Distributor Address Deleted");
+                    else
+                        Console.WriteLine("Distributor Address not Deleted ");
+                }
+                else
+                {
+                    Console.WriteLine("No Distributor Address Details Available");
+                }
+
+
+            }
+            catch (InventoryException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        private static void UpdateDistributorAddress()
+        {
+            try
+            {
+                int updateDistributorAddressID;
+                Console.WriteLine("Enter DistributorAddressID to Update Details:");
+                updateDistributorAddressID = Convert.ToInt32(Console.ReadLine());
+                DistributorAddress updatedDistributorAddress = DistributorAddressBL.SearchDistributorAddressBL(updateDistributorAddressID);
+                if (updatedDistributorAddress != null)
+                {
+                    Console.WriteLine("Update Address Line1 :");
+                    updatedDistributorAddress.DistributorAddressLine1 = Console.ReadLine();
+                    Console.WriteLine("Update Address Line2 :");
+                    updatedDistributorAddress.DistributorAddressLine2 = Console.ReadLine();
+                    Console.WriteLine("Update City :");
+                    updatedDistributorAddress.DistributorCity = Console.ReadLine();
+                    Console.WriteLine("Update State :");
+                    updatedDistributorAddress.DistributorState = Console.ReadLine();
+                    Console.WriteLine("Update Pincode :");
+                    updatedDistributorAddress.DistributorPincode = Console.ReadLine();
+                    bool distributorAddressUpdated = DistributorAddressBL.UpdateDistributorAddressBL(updatedDistributorAddress);
+                    if (distributorAddressUpdated)
+                        Console.WriteLine("Distributor Address Details Updated");
+                    else
+                        Console.WriteLine("Distributor Address Details not Updated ");
+                }
+                else
+                {
+                    Console.WriteLine("No Distributor Address Details Available");
+                }
+
+
+            }
+            catch (InventoryException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        private static void SearchDistributorAddressByID()
+        {
+            try
+            {
+                int searchDistributorAddressID;
+                Console.WriteLine("Enter Distributor Address ID to Search:");
+                searchDistributorAddressID = Convert.ToInt32(Console.ReadLine());
+                DistributorAddress searchDistributorAddress = DistributorAddressBL.SearchDistributorAddressBL(searchDistributorAddressID);
+                if (searchDistributorAddress != null)
+                {
+                    Console.WriteLine("******************************************************************************");
+                    Console.WriteLine("DistributorAddressID\t\tAddress Line1\t\tAddress Line2\t\tCity\t\tState\t\tPincode");
+                    Console.WriteLine("******************************************************************************");
+                    Console.WriteLine("{0}\t\t{1}\t\t{2}\t\t{3}\t\t{4}", searchDistributorAddress.DistributorAddressID, searchDistributorAddress.DistributorAddressLine1, searchDistributorAddress.DistributorAddressLine2, searchDistributorAddress.DistributorCity, searchDistributorAddress.DistributorState, searchDistributorAddress.DistributorPincode);
+                    Console.WriteLine("******************************************************************************");
+                }
+                else
+                {
+                    Console.WriteLine("No Distributor Address Details Available");
+                }
+
+            }
+            catch (InventoryException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        private static void ListAllDistributorsAddress()
+        {
+            try
+            {
+                List<DistributorAddress> distributorAddressList = DistributorAddressBL.GetAllDistributorAddressBL();
+                if (distributorAddressList != null)
+                {
+                    Console.WriteLine("******************************************************************************");
+                    Console.WriteLine("DistributorAddressID\t\tAddress Line1\t\tAddress Line2\t\tCity\t\tState\t\tPincode");
+                    Console.WriteLine("******************************************************************************");
+                    foreach (DistributorAddress distributorAddress in distributorAddressList)
+                    {
+                        Console.WriteLine("{0}\t\t{1}\t\t{2}\t\t{3}\t\t{4}", distributorAddress.DistributorAddressID, distributorAddress.DistributorAddressLine1, distributorAddress.DistributorAddressLine2, distributorAddress.DistributorCity, distributorAddress.DistributorState, distributorAddress.DistributorPincode);
+                    }
+                    Console.WriteLine("******************************************************************************");
+
+                }
+                else
+                {
+                    Console.WriteLine("No Guest Details Available");
+                }
+            }
+            catch (InventoryException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        private static void PrintAddressMenu()
+        {
+            Console.WriteLine("\n***********Distributor***********");
+            Console.WriteLine("1. Add Distributor Address");
+            Console.WriteLine("2. List All Distributor Address");
+            Console.WriteLine("3. Search Distributor by ID");
+            Console.WriteLine("4. Update Distributor Address");
+            Console.WriteLine("5. Delete Distributor Address");
+            Console.WriteLine("6. Exit");
+            Console.WriteLine("******************************************\n");
+
+        }
     }
-}
+ }
+

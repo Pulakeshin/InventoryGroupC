@@ -95,7 +95,6 @@ namespace Inventory.BusinessLayer
             {
                 throw ex;
             }
-            
             return searchSupplierAddress;
 
         }
@@ -115,7 +114,6 @@ namespace Inventory.BusinessLayer
             {
                 throw;
             }
-           
 
             return SupplierAddressUpdated;
         }
@@ -140,10 +138,8 @@ namespace Inventory.BusinessLayer
                 throw;
             }
             
-
             return SupplierAddressDeleted;
         }
 
     }
 }
-

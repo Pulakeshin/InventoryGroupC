@@ -89,7 +89,6 @@ namespace Inventory.BusinessLayer
             {
                 throw ex;
             }
-            
             return searchSupplier;
 
         }
@@ -109,7 +108,6 @@ namespace Inventory.BusinessLayer
             {
                 throw;
             }
-            
             return SupplierUpdated;
         }
 
@@ -132,7 +130,6 @@ namespace Inventory.BusinessLayer
             {
                 throw;
             }
-            
 
             return SupplierDeleted;
         }
