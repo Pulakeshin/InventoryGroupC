@@ -8,7 +8,7 @@ namespace Inventory.Exceptions
 {
     public class InventoryException : ApplicationException
     {
-        public GuestPhoneBookException()
+        public InventoryException()
             : base()
         {
         }
