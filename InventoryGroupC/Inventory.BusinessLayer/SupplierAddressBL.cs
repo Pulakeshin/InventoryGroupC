@@ -95,10 +95,7 @@ namespace Inventory.BusinessLayer
             {
                 throw ex;
             }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            
             return searchSupplierAddress;
 
         }
@@ -118,10 +115,7 @@ namespace Inventory.BusinessLayer
             {
                 throw;
             }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+           
 
             return SupplierAddressUpdated;
         }
@@ -145,12 +139,11 @@ namespace Inventory.BusinessLayer
             {
                 throw;
             }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            
 
             return SupplierAddressDeleted;
         }
 
     }
+}
+

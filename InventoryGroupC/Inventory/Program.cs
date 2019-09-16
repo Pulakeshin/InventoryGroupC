@@ -12,7 +12,7 @@ namespace Inventory
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             int temp,flag;
             Console.WriteLine("ENTER CHOICE:");
@@ -79,7 +79,7 @@ namespace Inventory
                     break;
             }
 
-            
+            Console.ReadKey();
         }
 
         private static void DeleteDistributor()
