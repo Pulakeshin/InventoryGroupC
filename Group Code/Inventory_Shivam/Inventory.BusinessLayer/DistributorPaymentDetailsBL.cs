@@ -33,6 +33,66 @@ namespace Inventory.BusinessLayer
             return validPayment;
         }
 
+        public static bool AddDistributorPaymentDetailsBL(DistributorPaymentDetails newPayment)
+        {
+            bool distributorPaymentAdded = false;
+            try
+            {
+                if (ValidateDisPayment(newPayment))
+                {
+                    DistributorPaymentDetailsDAL distributorDAL = new DistributorPaymentDetailsDAL();
+                    distributorPaymentAdded = distributorDAL.AddDistributorPaymentDAL(newPayment);
+                }
+            }
+            catch (InventoryException)
+            {
+                throw;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return distributorPaymentAdded;
+        }
+
+        public static List<DistributorPaymentDetails> GetAllPaymentDetailsBL()
+        {
+            List<DistributorPaymentDetails> distributorList = null;
+            try
+            {
+                DistributorPaymentDetailsDAL distributorDAL = new DistributorPaymentDetailsDAL();
+                distributorList = distributorDAL.GetAllPaymentDetailsDAL();
+            }
+            catch (InventoryException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return distributorList;
+        }
+        public static List<DistributorPaymentDetails> GetPaymentDetailsBL()
+        {
+            List<DistributorPaymentDetails> distributorList = null;
+            try
+            {
+                DistributorPaymentDetailsDAL distributorDAL = new DistributorPaymentDetailsDAL();
+                distributorList = distributorDAL.GetPaymentDetailsDAL();
+            }
+            catch (InventoryException ex)
+            {
+                throw ex;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return distributorList;
+        }
+
 
         public static List<DistributorPaymentDetails> GetBillByOrderIdBL(long orderId)
         {
@@ -41,19 +101,17 @@ namespace Inventory.BusinessLayer
             try
             {
                 DistributorPaymentDetailsDAL billDAL = new DistributorPaymentDetailsDAL();
-                Bill = billDAL.GetBillByOrderIdDAL(Bill, orderId);
+                Bill = billDAL.GetBillByOrderIdDAL(orderId);
 
             }
             catch (InventoryException ex)
             {
                 throw ex;
             }
-            /*
             catch (Exception ex)
             {
                 throw ex;
             }
-            */
 
             return Bill;
 
@@ -77,12 +135,10 @@ namespace Inventory.BusinessLayer
             {
                 throw;
             }
-            /*
             catch (Exception ex)
             {
                 throw ex;
             }
-            */
 
             return detailsUpdated;
         }
@@ -102,12 +158,10 @@ namespace Inventory.BusinessLayer
             {
                 throw;
             }
-            /*
             catch (Exception ex)
             {
                 throw ex;
             }
-            */
 
             return detailsUpdated;
         }
