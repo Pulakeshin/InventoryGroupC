@@ -1,6 +1,0 @@
-C:\Project\InventoryGroupC\Inventory.Entities\bin\Debug\Inventory.Entities.dll
-C:\Project\InventoryGroupC\Inventory.Entities\bin\Debug\Inventory.Entities.pdb
-C:\Project\InventoryGroupC\Inventory.Entities\obj\Debug\Inventory.Entities.csprojAssemblyReference.cache
-C:\Project\InventoryGroupC\Inventory.Entities\obj\Debug\Inventory.Entities.csproj.CoreCompileInputs.cache
-C:\Project\InventoryGroupC\Inventory.Entities\obj\Debug\Inventory.Entities.dll
-C:\Project\InventoryGroupC\Inventory.Entities\obj\Debug\Inventory.Entities.pdb

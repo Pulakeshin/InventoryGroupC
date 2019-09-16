@@ -1,6 +1,0 @@
-C:\Project\InventoryGroupC\Inventory.PresentationLayer\bin\Debug\Inventory.PresentationLayer.dll
-C:\Project\InventoryGroupC\Inventory.PresentationLayer\bin\Debug\Inventory.PresentationLayer.pdb
-C:\Project\InventoryGroupC\Inventory.PresentationLayer\obj\Debug\Inventory.Exceptions.csprojAssemblyReference.cache
-C:\Project\InventoryGroupC\Inventory.PresentationLayer\obj\Debug\Inventory.Exceptions.csproj.CoreCompileInputs.cache
-C:\Project\InventoryGroupC\Inventory.PresentationLayer\obj\Debug\Inventory.PresentationLayer.dll
-C:\Project\InventoryGroupC\Inventory.PresentationLayer\obj\Debug\Inventory.PresentationLayer.pdb

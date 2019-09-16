@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace Inventory.Entities
 {
-    public class RawMaterial
+    public class RawMaterialOrderDetails
     {
+
         public int RawMaterialID { get; set; }
-        public string RawMaterialName { get; set; }
-        public int RawMaterialUnitPrice { get; set; }
+        public int RawMaterialOrderQuantity { get; set; }
+        public double RawMaterialUnitPrice { get; set; }
+        private double Amount { get; set; }
     }
 }
