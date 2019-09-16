@@ -9,7 +9,7 @@ using Inventory.Exceptions;
 
 namespace Inventory.BusinessLayer
 {
-    class DistributorAddressBL
+    public class DistributorAddressBL
     {
         //Validate Distributor Address Details
         private static bool ValidateDistributorAddress(DistributorAddress distributorAddress)
@@ -47,7 +47,7 @@ namespace Inventory.BusinessLayer
         //Validating & Adding Distributor Address
         public static bool AddDistributorAddressBL(DistributorAddress newdistributorAddress)
         {
-            bool distributorAddressAdded = false;
+            bool distributorAddressAdded=false;
             try
             {
                 if (ValidateDistributorAddress(newdistributorAddress))
@@ -89,13 +89,13 @@ namespace Inventory.BusinessLayer
         }
 
         //Searching Distributor Address by distributor ID
-        public static Distributor SearchDistributorBL(int searchDistributorID)
+        public static DistributorAddress SearchDistributorAddressBL(int searchDistributorAddressID)
         {
-            Distributor searchDistributor = null;
+            DistributorAddress searchDistributorAddress = null;
             try
             {
-                DistributorDAL distributorDAL = new DistributorDAL();
-                searchDistributor = distributorDAL.SearchDistributorDAL(searchDistributorID);
+                DistributorAddressDAL distributorAddressDAL = new DistributorAddressDAL();
+                searchDistributorAddress = distributorAddressDAL.SearchDistributorAddressDAL(searchDistributorAddressID);
             }
             catch (InventoryException ex)
             {
@@ -105,7 +105,7 @@ namespace Inventory.BusinessLayer
             {
                 throw ex;
             }
-            return searchDistributor;
+            return searchDistributorAddress;
 
         }
 
