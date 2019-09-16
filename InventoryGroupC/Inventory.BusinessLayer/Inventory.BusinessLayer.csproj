@@ -44,6 +44,8 @@
     <Compile Include="DistributorAddressBL.cs" />
     <Compile Include="DistributorBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SupplierAddressBLcs.cs" />
+    <Compile Include="SupplierBL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Inventory.DataAccessLayer\Inventory.DataAccessLayer.csproj">
