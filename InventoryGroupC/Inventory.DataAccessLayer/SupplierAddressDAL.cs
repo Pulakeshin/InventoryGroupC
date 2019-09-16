@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Inventory.Entities;
+using System.Data.Common;
 
 namespace Inventory.DataAccessLayer
 {

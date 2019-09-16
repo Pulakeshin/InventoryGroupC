@@ -14,36 +14,72 @@ namespace Inventory
     {
         static void Main(string[] args)
         {
-            int choice;
-            do
+            int temp,flag;
+            Console.WriteLine("ENTER CHOICE:");
+            Console.WriteLine("1.System User");
+            Console.WriteLine("2.Supplier");
+            Console.WriteLine("3.Distributor");
+            temp = Convert.ToInt32(Console.ReadLine());
+
+            switch (temp)
             {
-                PrintMenu();
-                Console.WriteLine("Enter your Choice:");
-                choice = Convert.ToInt32(Console.ReadLine());
-                switch (choice)
-                {
-                    case 1:
-                        AddDistributor();
-                        break;
-                    case 2:
-                        ListAllDistributors();
-                        break;
-                    case 3:
-                        SearchDistributorByID();
-                        break;
-                    case 4:
-                        UpdateDistributor();
-                        break;
-                    case 5:
-                        DeleteDistributor();
-                        break;
-                    case 6:
-                        return;
-                    default:
-                        Console.WriteLine("Invalid Choice");
-                        break;
-                }
-            } while (choice != -1);
+                case 1:
+                    Console.WriteLine("Which System you want to enter?");
+                    Console.WriteLine("1.Supplier");
+                    Console.WriteLine("2.Distributor");
+                    flag = Convert.ToInt32(Console.ReadLine());
+                    if (flag == 1)
+                    {
+                        Console.WriteLine("system user is in supplier");
+                    }
+                    else if (flag == 2)
+                    {
+                        int choice;
+                        do
+                        {
+                            PrintMenu();
+                            Console.WriteLine("Enter your Choice:");
+                            choice = Convert.ToInt32(Console.ReadLine());
+                            switch (choice)
+                            {
+                                case 1:
+                                    AddDistributor();
+                                    break;
+                                case 2:
+                                    ListAllDistributors();
+                                    break;
+                                case 3:
+                                    SearchDistributorByID();
+                                    break;
+                                case 4:
+                                    UpdateDistributor();
+                                    break;
+                                case 5:
+                                    DeleteDistributor();
+                                    break;
+                                case 6:
+                                    return;
+                                default:
+                                    Console.WriteLine("Invalid Choice");
+                                    break;
+                            }
+                        } while (choice != -1);
+                    }
+                    else
+                        Console.WriteLine("Invalid choice");
+                    break;
+                case 2:
+                    Console.WriteLine("In Supplier");
+                    break;
+                case 3:
+                    Console.WriteLine("In Distributor");
+                    break;
+                default:
+                    Console.WriteLine("Invalid Input");
+                    break;
+            }
+
+            
         }
 
         private static void DeleteDistributor()
