@@ -48,10 +48,12 @@ namespace Inventory.BusinessLayer
             {
                 throw ex;
             }
+            /*
             catch (Exception ex)
             {
                 throw ex;
             }
+            */
 
             return Bill;
 
@@ -75,10 +77,12 @@ namespace Inventory.BusinessLayer
             {
                 throw;
             }
+            /*
             catch (Exception ex)
             {
                 throw ex;
             }
+            */
 
             return detailsUpdated;
         }
@@ -98,10 +102,12 @@ namespace Inventory.BusinessLayer
             {
                 throw;
             }
+            /*
             catch (Exception ex)
             {
                 throw ex;
             }
+            */
 
             return detailsUpdated;
         }
