@@ -56,7 +56,7 @@ namespace Inventory.DataAccessLayer
 
 
 
-        public bool UpdateSupplierAddress(SupplierAddress updateSupplierAddress)
+        public bool UpdateSupplierAddressDAL(SupplierAddress updateSupplierAddress)
         {
             bool SupplierAddressUpdated = false;
             try
@@ -101,7 +101,7 @@ namespace Inventory.DataAccessLayer
                     SupplierAddressDeleted = true;
                 }
             }
-            catch (DbException ex)
+            catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
