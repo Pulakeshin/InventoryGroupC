@@ -6,18 +6,18 @@ using System.Threading.Tasks;
 
 namespace Inventory.Exceptions
 {
-    public class GuestPhoneBookException : ApplicationException
+    public class InventoryException : ApplicationException
     {
         public GuestPhoneBookException()
             : base()
         {
         }
 
-        public GuestPhoneBookException(string message)
+        public InventoryException(string message)
             : base(message)
         {
         }
-        public GuestPhoneBookException(string message, Exception innerException)
+        public InventoryException(string message, Exception innerException)
             : base(message, innerException)
         {
         }
