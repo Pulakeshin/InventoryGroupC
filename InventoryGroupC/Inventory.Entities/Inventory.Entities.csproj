@@ -46,6 +46,8 @@
     <Compile Include="RawMaterial.cs" />
     <Compile Include="RawMaterialOrder.cs" />
     <Compile Include="RawMaterialOrderDetails.cs" />
+    <Compile Include="Supplier.cs" />
+    <Compile Include="SupplierAddress.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
