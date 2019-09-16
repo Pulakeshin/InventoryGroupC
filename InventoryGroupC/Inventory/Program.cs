@@ -167,15 +167,19 @@ namespace Inventory
         private static void AddDistributorAddress()
         {
             DistributorAddress distributorAddress = new DistributorAddress();
-            Console.WriteLine("Enter Distributor ID :");
-            distributor.DistributorID = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Enter Distributor Name :");
-            distributor.DistributorName = Console.ReadLine();
-            Console.WriteLine("Enter PhoneNumber :");
-            distributor.DistributorContactNumber = Console.ReadLine();
-            Console.WriteLine("Enter Email ID :");
-            distributor.DistributorEmail = Console.ReadLine();
-            Console.WriteLine("Enter Distributor Address: ");
+            Console.WriteLine("Enter Distributor Address ID :");
+            distributorAddress.DistributorAddressID = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter Distributor Address Line1 :");
+            distributorAddress.DistributorAddressLine1 = Console.ReadLine();
+            Console.WriteLine("Enter Distributor Address Line2 :");
+            distributorAddress.DistributorAddressLine2 = Console.ReadLine();
+            Console.WriteLine("Enter Distributor City :");
+            distributorAddress.DistributorCity = Console.ReadLine();
+            Console.WriteLine("Enter Distributor State :");
+            distributorAddress.DistributorState = Console.ReadLine();
+            Console.WriteLine("Enter Pincode :");
+            distributorAddress.DistributorPincode = Console.ReadLine();
+
         }
 
         private static void AddDistributor()
