@@ -11,8 +11,10 @@ namespace Inventory.DataAccessLayer
 {
     public class DistributorDAL
     {
+        //Allocating memory for List of type Distributor
         public static List<Distributor> distributorList = new List<Distributor>();
 
+        //Adding new Distributor
         public bool AddDistributorDAL(Distributor newDistributor)
         {
             bool distributorAdded = false;
@@ -29,11 +31,13 @@ namespace Inventory.DataAccessLayer
 
         }
 
+        //Returning Distributor List
         public List<Distributor> GetAllDistributorsDAL()
         {
             return distributorList;
         }
 
+        //Searching Distributor by Distributor ID
         public Distributor SearchDistributorDAL(int searchDistributorID)
         {
             Distributor searchDistributor = null;
@@ -54,6 +58,7 @@ namespace Inventory.DataAccessLayer
             return searchDistributor;
         }
 
+        //Searching Distributor by Distributor Name
         public List<Distributor> GetDistributorsByNameDAL(string distributorName)
         {
             List<Distributor> searchDistributor = new List<Distributor>();
@@ -74,11 +79,13 @@ namespace Inventory.DataAccessLayer
             return searchDistributor;
         }
 
+        //Updating Distributor Details
         public bool UpdateDistributorDAL(Distributor updateDistributor)
         {
             bool distributorUpdated = false;
             try
             {
+                //Update distributor details
                 for (int i = 0; i < distributorList.Count; i++)
                 {
                     if (distributorList[i].DistributorID == updateDistributor.DistributorID)
@@ -97,6 +104,7 @@ namespace Inventory.DataAccessLayer
 
         }
 
+        //Deleting distributor
         public bool DeleteDistributorDAL(int deleteDistributorID)
         {
             bool distributorDeleted = false;

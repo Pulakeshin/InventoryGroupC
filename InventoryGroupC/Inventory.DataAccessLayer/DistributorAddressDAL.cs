@@ -11,8 +11,10 @@ namespace Inventory.DataAccessLayer
 {
     public class DistributorAddressDAL
     {
+        //Creating List for Distributor address
         public static List<DistributorAddress> distributorAddressList = new List<DistributorAddress>();
 
+        //Adding Distributor Address
         public bool AddDistributorAddressDAL(DistributorAddress newDistributorAddress)
         {
             bool distributorAddressAdded = false;
@@ -29,11 +31,13 @@ namespace Inventory.DataAccessLayer
 
         }
 
+        //Returning Distributor Address List
         public List<DistributorAddress> GetAllDistributorAddressDAL()
         {
             return distributorAddressList;
         }
 
+        //Searching Distributor Address by Distributor address ID
         public DistributorAddress SearchDistributorAddressDAL(int searchDistributorAddressID)
         {
             DistributorAddress searchDistributorAddress = null;
@@ -54,6 +58,7 @@ namespace Inventory.DataAccessLayer
             return searchDistributorAddress;
         }
 
+        //Updating Distributor Address
         public bool UpdateDistributorAddressDAL(DistributorAddress updateDistributorAddress)
         {
             bool distributorAddressUpdated = false;
@@ -80,6 +85,7 @@ namespace Inventory.DataAccessLayer
 
         }
 
+        //Deleting Distributor Address
         public bool DeleteDistributorAddressDAL(int deleteDistributorAddressID)
         {
             bool distributorAddressDeleted = false;

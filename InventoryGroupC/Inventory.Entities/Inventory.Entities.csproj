@@ -43,13 +43,6 @@
   <ItemGroup>
     <Compile Include="InventoryEntities.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RawMaterial.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Inventory.PresentationLayer\Inventory.Exceptions.csproj">
-      <Project>{eb05a040-9f25-496d-a323-08660c908bbb}</Project>
-      <Name>Inventory.Exceptions</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

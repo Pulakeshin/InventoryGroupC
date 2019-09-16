@@ -1,0 +1,16 @@
+C:\Project\InventoryGroupC\Inventory\obj\Debug\Inventory.PresentationLayer.csprojAssemblyReference.cache
+C:\Project\InventoryGroupC\Inventory\obj\Debug\Inventory.PresentationLayer.csproj.CoreCompileInputs.cache
+C:\Project\InventoryGroupC\Inventory\bin\Debug\Inventory.exe.config
+C:\Project\InventoryGroupC\Inventory\bin\Debug\Inventory.exe
+C:\Project\InventoryGroupC\Inventory\bin\Debug\Inventory.pdb
+C:\Project\InventoryGroupC\Inventory\bin\Debug\Inventory.BusinessLayer.dll
+C:\Project\InventoryGroupC\Inventory\bin\Debug\Inventory.DataAccessLayer.dll
+C:\Project\InventoryGroupC\Inventory\bin\Debug\Inventory.Entities.dll
+C:\Project\InventoryGroupC\Inventory\bin\Debug\Inventory.PresentationLayer.dll
+C:\Project\InventoryGroupC\Inventory\bin\Debug\Inventory.BusinessLayer.pdb
+C:\Project\InventoryGroupC\Inventory\bin\Debug\Inventory.DataAccessLayer.pdb
+C:\Project\InventoryGroupC\Inventory\bin\Debug\Inventory.Entities.pdb
+C:\Project\InventoryGroupC\Inventory\bin\Debug\Inventory.PresentationLayer.pdb
+C:\Project\InventoryGroupC\Inventory\obj\Debug\Inventory.PresentationLayer.csproj.CopyComplete
+C:\Project\InventoryGroupC\Inventory\obj\Debug\Inventory.exe
+C:\Project\InventoryGroupC\Inventory\obj\Debug\Inventory.pdb

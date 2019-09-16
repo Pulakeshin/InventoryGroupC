@@ -11,6 +11,7 @@ namespace Inventory.BusinessLayer
 {
     class DistributorAddressBL
     {
+        //Validate Distributor Address Details
         private static bool ValidateDistributorAddress(DistributorAddress distributorAddress)
         {
             StringBuilder sb = new StringBuilder();
@@ -36,13 +37,14 @@ namespace Inventory.BusinessLayer
             if (distributorAddress.DistributorPincode.Length < 6)
             {
                 validDistributorAddress = false;
-                sb.Append(Environment.NewLine + "Required 10 Digit Contact Number");
+                sb.Append(Environment.NewLine + "Required 6 Digit Pincode");
             }
             if (validDistributorAddress == false)
                 throw new InventoryException(sb.ToString());
             return validDistributorAddress;
         }
 
+        //Validating & Adding Distributor Address
         public static bool AddDistributorAddressBL(DistributorAddress newdistributorAddress)
         {
             bool distributorAddressAdded = false;
@@ -66,6 +68,7 @@ namespace Inventory.BusinessLayer
             return distributorAddressAdded;
         }
 
+        //Returning complete list of distributor address
         public static List<DistributorAddress> GetAllDistributorAddressBL()
         {
             List<DistributorAddress> distributorAddressList = null;
@@ -85,6 +88,7 @@ namespace Inventory.BusinessLayer
             return distributorAddressList;
         }
 
+        //Searching Distributor Address by distributor ID
         public static Distributor SearchDistributorBL(int searchDistributorID)
         {
             Distributor searchDistributor = null;
@@ -105,6 +109,7 @@ namespace Inventory.BusinessLayer
 
         }
 
+        //Updating Distributor Address
         public static bool UpdateDistributorAddressBL(DistributorAddress updateDistributorAddress)
         {
             bool distributorAddressUpdated = false;
@@ -128,6 +133,7 @@ namespace Inventory.BusinessLayer
             return distributorAddressUpdated;
         }
 
+        //Deleting Distributor Address
         public static bool DeleteDistributorAddressBL(int deleteDistributorAddressID)
         {
             bool distributorAddressDeleted = false;

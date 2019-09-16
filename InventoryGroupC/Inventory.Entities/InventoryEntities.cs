@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Inventory.Entities
 {
+    //Distributor Class
     public class Distributor
     {
         private int distributorID;
@@ -36,6 +37,7 @@ namespace Inventory.Entities
             set { distributorEmail = value; }
         }
 
+        //Distributor Constructor
         public Distributor()
         {
             distributorID = 0;
@@ -45,6 +47,7 @@ namespace Inventory.Entities
         }
     }
 
+    //Distributor Address Class
     public class DistributorAddress
     {
         private int distributorAddressID;
@@ -89,6 +92,7 @@ namespace Inventory.Entities
             set { distributorpincode = value; }
         }
 
+        //Distributor Address Constructor
         public DistributorAddress()
         {
             distributorAddressID = 0;
