@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -43,9 +43,14 @@
   <ItemGroup>
     <Compile Include="DistributorAddressDAL.cs" />
     <Compile Include="DistributorDAL.cs" />
+    <Compile Include="DistributorPaymentDetailsDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SupplierAddressDAL.cs" />
     <Compile Include="SupplierDAL.cs" />
+    <Compile Include="SupplierPaymentDetailsDAL.cs" />
+    <Compile Include="RawMaterialDAL.cs" />
+    <Compile Include="RawMaterialOrderDAL.cs" />
+    <Compile Include="RawMaterialOrderDetailsDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Inventory.Entities\Inventory.Entities.csproj">

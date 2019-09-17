@@ -29,7 +29,7 @@ namespace Inventory.Entities
         public string SupplierAddressLine2
         {
             get { return _supplierAddressLine2; }
-            set { _supplierAddressLine1 = value; }
+            set { _supplierAddressLine2 = value; }
         }
         private string _supplierCity;
         public string SupplierCity

@@ -11,7 +11,6 @@ namespace Inventory.BusinessLayer
 {
     public class SupplierBL
     {
-        //validates supplier information
         private static bool ValidateSupplier(Supplier supplier)
         {
             StringBuilder sb = new StringBuilder();
@@ -77,7 +76,7 @@ namespace Inventory.BusinessLayer
 
             return SupplierList;
         }
-        //search supplier by Id
+
         public static Supplier SearchSuppliertBL(int searchSupplierID)
         {
             Supplier searchSupplier = null;
@@ -85,10 +84,6 @@ namespace Inventory.BusinessLayer
             {
                 SupplierDAL guestDAL = new SupplierDAL();
                 searchSupplier = guestDAL.SearchSupplierDAL(searchSupplierID);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
             }
             catch (Exception ex)
             {
@@ -113,11 +108,6 @@ namespace Inventory.BusinessLayer
             {
                 throw;
             }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-
             return SupplierUpdated;
         }
 
@@ -139,10 +129,6 @@ namespace Inventory.BusinessLayer
             catch (Exception)
             {
                 throw;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
             }
 
             return SupplierDeleted;

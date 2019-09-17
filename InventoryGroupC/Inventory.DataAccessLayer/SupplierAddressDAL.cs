@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Inventory.Entities;
+using System.Data.Common;
 
 namespace Inventory.DataAccessLayer
 {
@@ -55,7 +56,7 @@ namespace Inventory.DataAccessLayer
 
 
 
-        public bool UpdateSupplierAddress(SupplierAddress updateSupplierAddress)
+        public bool UpdateSupplierAddressDAL(SupplierAddress updateSupplierAddress)
         {
             bool SupplierAddressUpdated = false;
             try
@@ -100,7 +101,7 @@ namespace Inventory.DataAccessLayer
                     SupplierAddressDeleted = true;
                 }
             }
-            catch (DbException ex)
+            catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
