@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>Products Table</title>
+        <script type="text/javascript">
+            function validate() {
+                if (document.distform.distname.value == "") {
+                    alert("Please provide your name!");
+                    document.distform.distname.focus();
+                    return false;
+                }
+                if (document.distform.distadd.value == "") {
+                    alert("Please provide your Address!");
+                    document.distform.distadd.focus();
+                    return false;
+                }
+                if (document.distform.distcity.value == "") {
+                    alert("Please provide your City!");
+                    document.distform.distcity.focus();
+                    return false;
+                }
+                if (document.distform.diststate.value == "") {
+                    alert("Please provide your State!");
+                    document.distform.diststate.focus();
+                    return false;
+                }
+                if (document.distform.distpin.value == "" || isNaN(document.distform.distpin.value) ||
+                    document.distform.distpin.value.length != 6) {
+
+                    alert("Please provide a zip in the format ######.");
+                    document.distform.distpin.focus();
+                    return false;
+                }
+            }
+        </script>
+
+        <style type="text/css">.test {color:blue; font-size:20px; text-align:left}
+            input[type=text]{border-color=yellow;}
+            input[type=text]:hover{border-color:red}
+        </style>
+    </head>
+
+    <body style="background-color:greenyellow">
+        <div style="text-align:center; border:2px solid; color:blue"> PRODUCTS TABLE </div><br/>
+        <table border="1" cellpadding="0" style="width:100%;">
+            <tr><td><b>Product</b></td><td><b>Price</b></td><td><b>Quantity</b></td><td><b>Check</b></td></tr>
+            <tr><td>Soft Drinks</td><td>20</td><td><select size="1"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></td><td><input type="checkbox"></td></tr>
+            <tr><td>Tonic Water</td><td>30</td><td><select size="1"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></td><td><input type="checkbox"></td></tr>
+            <tr><td>Energy Drink</td><td>60</td><td><select size="1"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></td><td><input type="checkbox"></td></tr>
+            <tr><td>Fruit Juice</td><td>40</td><td><select size="1"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></td><td><input type="checkbox"></td></tr>
+            <tr><td>Mocktails</td><td>90</td><td><select size="1"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></td><td><input type="checkbox"></td></tr>
+
+            <tr><td>
+                <h2>Distributor Details</h2>
+                <form action="/action_page.php" name="distform" onsubmit="return validate()">
+                    Distributor Name: <input type="text" name="distributorname" id="distname" autocomplete="off">
+                    <br><br>
+                    Distributor Address: <input type="text" name="distributoraddress" id="distadd" autocomplete="off">
+                    <br><br>
+                    Distributor City: <input type="text" name="city" id="distcity" autocomplete="off">
+                    <br><br>
+                    Distributor State: <input type="text" name="state" id="diststate" autocomplete="off">
+                    <br><br>
+                    Distributor Pincode: <input type="text" name="pincode" id="distpin" autocomplete="off">
+                    <br><br>
+                    <input type="reset" value="Clear"/>
+                    <input type="submit" value="Submit">
+                </form> 
+            </td></tr>
+        </table></br>
+        <input type="submit" value="Place Order!!!">
+    </body>
+</html>
+<p id="demo"></p>
